@@ -24,6 +24,16 @@
     /*--color-skin-line: 255, 105, 180;*/
   }
 
+  /* 注册你的自定义字体并告诉浏览器它在哪里 */
+  @font-face {
+    font-family: 'HarmonyOS_Sans';
+    /*src: url('../fonts/HarmonyOS_Sans_TC.woff') format('woff');*/
+    src: url('/fonts/HarmonyOS_Sans.woff2') format('woff2');
+
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
@@ -34,8 +44,14 @@
     display: block;
   }
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
+    @apply flex min-h-[100svh] flex-col bg-skin-fill text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
+    font-family: 'HarmonyOS_Sans', sans-serif;
+    letter-spacing: 0.06em; /* 调整字与字间距 */
+    line-height: 1.6; /* 调整行间距 */
   }
+  /*body {*/
+  /*  @apply flex min-h-[100svh] flex-col bg-skin-fill HarmonyOS_Sans text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;*/
+  /*}*/
   section,
   footer {
     @apply mx-auto max-w-3xl px-4;

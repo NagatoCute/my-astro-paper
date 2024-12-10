@@ -4,8 +4,8 @@ import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: "posts" | "archives" |  "about" | "search";
-  // "tags" |
+  activeNav?: "posts" | "tags" |"archives" | "MyFriends" |  "about" | "search";
+
 }
 
 const { activeNav } = Astro.props;
@@ -61,11 +61,16 @@ const { activeNav } = Astro.props;
               Posts
             </a>
           </li>
-          <!--<li>-->
-          <!--  <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>-->
-          <!--    Tags-->
-          <!--  </a>-->
-          <!--</li>-->
+          <li>
+            <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
+              Tags
+            </a>
+          </li>
+          <li>
+            <a href="/MyFriends/" class={activeNav === "MyFriends" ? "active" : ""}>
+              MyFriends
+            </a>
+          </li>
           <li>
             <a href="/about/" class={activeNav === "about" ? "active" : ""}>
               About
@@ -248,4 +253,19 @@ const { activeNav } = Astro.props;
 
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", toggleNav);
+
+  // Function to toggle theme
+  // function toggleTheme() {
+  //   const htmlElement = document.documentElement;
+  //   const currentTheme = htmlElement.getAttribute('data-theme');
+  //
+  //   if (currentTheme === 'light') {
+  //     htmlElement.setAttribute('data-theme', 'dark');
+  //   } else {
+  //     htmlElement.setAttribute('data-theme', 'light');
+  //   }
+  // }
+  //
+  // // Set up the interval to toggle the theme every second
+  // setInterval(toggleTheme, 1);
 </script>

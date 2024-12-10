@@ -1,0 +1,63 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkButton from "@components/LinkButton.astro";
+
+
+const friends = [
+  { name: "Friend 1", url: "https://friend1.com", description: "Description of Friend 1" },
+  { name: "Friend 2", url: "https://friend2.com", description: "Description of Friend 2" },
+  { name: "Friend 3", url: "https://friend3.com", description: "Description of Friend 3" },
+];
+---
+
+<Layout title={`My Friends | ${SITE.title}`}>
+  <Header />
+
+  <main id="main-content">
+    <div class="friends-wrapper">
+      <h1>My Friends</h1>
+      <ul class="friends-list">
+        {friends.map((friend) => (
+          <li class="friend-item">
+            <a href={friend.url} target="_blank" rel="noopener noreferrer" class="friend-link">
+              <h2>{friend.name}</h2>
+              <p>{friend.description}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+    #main-content {
+        @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
+    }
+    .friends-wrapper {
+        @apply mb-14 flex flex-col items-center justify-center;
+    }
+    .friends-wrapper h1 {
+        @apply text-4xl font-bold text-skin-accent mb-8;
+    }
+    .friends-list {
+        @apply list-none p-0;
+    }
+    .friend-item {
+        @apply mb-6;
+    }
+    .friend-link {
+        @apply block text-lg no-underline hover:underline hover:decoration-dashed hover:underline-offset-4;
+    }
+    .friend-link h2 {
+        @apply text-xl font-semibold mb-2;
+    }
+    .friend-link p {
+        @apply text-gray-600;
+    }
+</style>
