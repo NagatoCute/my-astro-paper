@@ -8,7 +8,8 @@
   ---
 
   <div class={`max-w-3xl mx-auto ${noPadding ? "px-0" : "px-4"}`}>
-    <hr class="border-skin-line" aria-hidden={ariaHidden} />
+
+    <hr class="hr-edge-weak" aria-hidden={ariaHidden} />
     <!--<hr aria-hidden="true" class="border-none danger-zebra h-3">-->
   </div>
 
@@ -26,4 +27,12 @@
       .border-skin-line {
           border-color: rgb(var(--color-skin-line));
       }
-  </style>
+
+
+      .hr-edge-weak {
+          border: 0;
+          padding-top: 1px;
+          background: linear-gradient(to right, transparent, #d0d0d5, transparent);
+      }
+
+    </style>

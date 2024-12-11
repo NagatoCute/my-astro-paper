@@ -1,5 +1,20 @@
 import type { Site, SocialObjects } from "./types";
+import type { GiscusProps } from "@giscus/react";
 
+
+export const GISCUS: GiscusProps = {
+  repo: "NagatoCute/my-astro-paper",
+  repoId: "R_kgDONb3LEA",
+  category: "Announcements",
+  categoryId: "DIC_kwDONb3LEM4ClHLw",
+  mapping: "pathname",
+  reactionsEnabled: "0",
+  emitMetadata: "1",
+  inputPosition: "top",
+  lang: "zh-CN",
+  loading: "lazy",
+  // crossorigin: "anonymous"
+};
 export const SITE: Site = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
   // author: "Sat Naing",
